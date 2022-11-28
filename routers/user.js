@@ -1,7 +1,7 @@
-const middlewareController = require('../controller/middlewareController')
-const userController = require('../controller/userController')
-
-const router = require('express').Router()
+import middlewareController from '../controller/middlewareController.js'
+import userController from '../controller/userController.js'
+import express from 'express'
+const router = express.Router()
 
 
 //Get All User
@@ -11,5 +11,4 @@ router.delete("/:id", middlewareController.verifyTokenAndAdminAuth, userControll
 //GET by Id
 router.get('/:id', userController.getUserById)
 
-
-module.exports = router
+export default router

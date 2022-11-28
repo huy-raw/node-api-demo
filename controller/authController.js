@@ -1,7 +1,7 @@
-const User = require("../models/User")
-const Token = require('../models/Token')
-const bcrypt = require('bcrypt')
-const jwt = require('jsonwebtoken')
+import User from "../models/User.js"
+import Token from '../models/Token.js'
+import bcrypt from 'bcrypt'
+import jwt from 'jsonwebtoken'
 
 const authController = {
     //REGISTER
@@ -132,4 +132,4 @@ const authController = {
 
 
 
-module.exports = authController;
+export default authController;

@@ -1,4 +1,4 @@
-const jwt = require('jsonwebtoken')
+import jwt from 'jsonwebtoken'
 
 const middlewareController = {
     //veryfy token
@@ -31,4 +31,4 @@ const middlewareController = {
     }
 
 }
-module.exports = middlewareController
+export default middlewareController

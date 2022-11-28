@@ -1,10 +1,11 @@
-const express = require('express')
-const cors = require('cors')
-const dotenv = require('dotenv')
-const mongoose = require('mongoose')
-const cookieParse = require('cookie-parser')
-const authRoute = require('./routers/auth')
-const userRoute = require('./routers/user')
+import express from 'express'
+import cors from 'cors'
+import dotenv from 'dotenv'
+import mongoose from 'mongoose'
+import cookieParse from 'cookie-parser'
+import authRoute from './routers/auth.js'
+import userRoute from './routers/user.js'
+import swaggerDocs from './swagger.js'
 const app = express()
 dotenv.config();
 
@@ -23,5 +24,6 @@ app.use('/v1/user', userRoute)
 
 app.listen(process.env.PORT, () => {
     console.log(`Server is running on port ${process.env.PORT}.`)
+    swaggerDocs(app, process.env.PORT)
 })
 

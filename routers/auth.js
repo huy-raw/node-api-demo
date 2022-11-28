@@ -1,7 +1,7 @@
-const authController = require('../controller/authController')
-const middlewareController = require('../controller/middlewareController')
-const router = require('express').Router()
-
+import authController from '../controller/authController.js'
+// import middlewareController from '../controller/middlewareController'
+import express from 'express'
+const router = express.Router()
 // REGISTER
 router.post('/register', authController.register)
 // LOGIN
@@ -12,4 +12,4 @@ router.post("/refresh", authController.requestRefreshToken)
 // router.post('/logout', middlewareController.verifyToken, authController.logout)
 router.post('/logout', authController.logout)
 
-module.exports = router
+export default router
